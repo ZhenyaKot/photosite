@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотограф Meri Mazi</title>
+    <link rel="stylesheet" href="{% static 'deps/css/styles.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/about_me.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/gallery.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/services.css' %}"> <!-- Подключение стилевого файла -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+    <!-- Заголовок сайта -->
+    <div class="logo">
+        <h1>
+            <span class="highlight">Фотограф</span><br>
+            <span class="highlight subtitle">Meri Mazi</span>
+        </h1>
+    </div>
+
+    <!-- Навигационное меню как отдельный элемент -->
+    <header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#prices">Цены</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Секция hero с основным изображением -->
+    <section id='home' class="hero" style="background-image: url('{% static 'deps/images/main_photo.jpg' %}');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h2>Запечатлите самые важные моменты</h2>
+        <a href="#about" class="btn">Подробней</a> <!-- Добавлена кнопка -->
+    </div>
+</section>
+
+    <!-- Обо мне -->
+    <section id="about" class="about-section" style=" background-image: url('{% static 'deps/images/about_photo3.jpg' %}');">
+        <div class="about-overlay"></div>
+        <h2>Обо мне</h2>
+        <p> Я – профессиональный фотограф с опытом работы более 10 лет. Мой стиль – это искусство запечатлевать мгновения, создавая уникальные истории через объектив. </p>
+</section>
+
+    <!-- Галерея работ -->
+    <section id="gallery">
+    <h2>Галерея работ</h2>
+    <div class="gallery-grid">
+        <a href="URL_для_работы_1" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_4.jpg' %}" alt="Работа 1">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+        </a>
+        <a href="URL_для_работы_2" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_2.jpg' %}" alt="Работа 2">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+        </a>
+        <a href="URL_для_работы_3" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_3.jpg' %}" alt="Работа 3">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+        </a>
+        <a href="URL_для_работы_4" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_5.jpg' %}" alt="Работа 4">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+        </a>
+        <a href="URL_для_работы_5" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_6.jpg' %}" alt="Работа 5">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+        </a>
+        <a href="URL_для_работы_6" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_7.jpg' %}" alt="Работа 6">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+        </a>
+    </div>
+    <a href="URL_для_дополнительных_работ" class="show-more">Показать еще работы</a>
+</section>
+
+    <!-- Отзывы клиентов (закомментировано) -->
+    <!-- <section id="testimonials">-->
+    <!-- <h2>Отзывы клиентов</h2>-->
+    <!-- <blockquote>-->
+    <!-- "Лучший фотограф, с которым я работал!" – Клиент 1-->
+    <!-- </blockquote>-->
+    <!-- <blockquote>-->
+    <!-- "Работа с ним была просто невероятной!" – Клиент 2-->
+    <!-- </blockquote>-->
+    <!-- </section>-->
+
+    <!-- Услуги, предлагаемые фотографом -->
+    <section id="services">
+    <h2>Услуги</h2>
+
+    <div class="service-item">
+        <img src="{% static 'deps/images/services/portrait.jpg' %}" class="service-image">
+        <div class="service-description">
+            <h3>Портретная съемка</h3>
+            <p>Краткое описание портретной съемки. Мы предлагаем профессиональные услуги по созданию портретов в различных стилях.</p>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <img src="{% static 'deps/images/services/fashion.jpg' %}" class="service-image">
+        <div class="service-description">
+            <h3>Фешн съемка</h3>
+            <p>Краткое описание фешн съемки. Стильные фотографии, которые помогут выделить вашу индивидуальность.</p>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <img src="{% static 'deps/images/services/beauty.jpg' %}" class="service-image">
+        <div class="service-description">
+            <h3>Бьюти съемка</h3>
+            <p>Краткое описание бьюти съемки. Профессиональные фотосессии для журналов и социальных сетей.</p>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <img src="{% static 'deps/images/services/stud.jpg' %}" class="service-image">
+        <div class="service-description">
+            <h3>Студийная фотография</h3>
+            <p>Краткое описание студийной фотографии. Лучшие условия и оборудование для качественной съемки.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Секция для записи на съемку -->
+    <section id="booking">
+        <h2>Записаться на съемку</h2>
+        <a href="booking.html" class="button">Записаться</a>
+    </section>
+
+    <!-- Футер с контактной информацией и ссылками на социальные сети -->
+    <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: info@example.com | +7 (123) 456-78-90</p>
+        <p>&copy; 2023 Фотограф [Имя]. Все права защищены.</p>
+    </footer>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Основные стили для навигационного меню */
+
+header {
+    position: fixed; /* Шапка фиксирована */
+    top: 0; /* Закрепляем шапку сверху */
+    width: 100%; /* Ширина 100% */
+    z-index: 10; /* Шапка выше фона */
+    display: flex; /* Flexbox для размещения меню */
+    justify-content: center; /* Центрируем меню */
+    transition: box-shadow 0.3s ease; /* Переход для появления обрамления */
+    padding: 20px 0; /* Отступы */
+    background-color: rgba(0, 0, 0, 0); /* Прозрачный фон */
+}
+
+/* Стили для навигационного меню */
+.header-nav {
+    position: fixed; /* Навигация фиксируется при прокрутке */
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Шапка выше контента */
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0); /* Прозрачный фон */
+    transition: background-color 0.8s ease, box-shadow 0.5s ease; /* Переход для фона и тени */
+    padding: 20px 0;
+    box-shadow: none; /* Нет тени по умолчанию */
+}
+
+.navigation-menu {
+    list-style: none; /* Убираем стандартные маркеры списка */
+    display: flex; /* Используем flexbox для горизонтального расположения элементов */
+    background-color: transparent; /* Делаем фон прозрачным */
+    padding: 0; /* Убираем отступы */
+}
+
+.navigation-menu li {
+    margin: 0 30px; /* Увеличиваем отступы между элементами меню */
+}
+
+.navigation-menu a {
+    color: white; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание текста */
+    font-size: 20px; /* Увеличенный размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    transition: color 0.8s, text-shadow 0.5s; /* Плавные переходы для цвета и тени текста */
+    text-transform: uppercase; /* Заглавные буквы */
+    letter-spacing: 1px; /* Пробел между буквами */
+}
+
+/* Эффект при наведении на ссылки меню */
+.navigation-menu a:hover {
+    color: #F5DEB3; /* Цвет текста при наведении */
+    text-shadow: 0 0 10px rgba(245, 222, 179, 0.7), 0 0 20px rgba(255, 215, 0, 0.5); /* Тень текста для выделения */
+}
+
+/* Эффект при прокрутке страницы */
+.header-nav.scrolled {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; /* Меняем цвет фона при скролле */
+}
+
+.header-nav.scrolled .navigation-menu a {
+    color: black; /* Меняем цвет текста в меню при скролле */
+}

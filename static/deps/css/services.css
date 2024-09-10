@@ -1,0 +1,59 @@
+
+.service-item {
+    display: flex;
+    align-items: center; /* Центрировать по вертикали */
+    margin-bottom: 40px; /* Увеличенный отступ между услугами */
+    padding: 15px; /* Отступ внутри элемента */
+    padding: 50px;
+
+}
+
+.service-description {
+    flex-grow: 1; /* Это позволяет тексту занимать всю доступную ширину */
+}
+
+
+
+
+.service-image {
+    width: 35%; /* Оставляем как есть или измените на фиксированное значение */
+    height: auto; /* Чтобы сохранить пропорции изображения */
+    margin-right: 20px;
+    object-fit: cover;  /* Пропорционально масштабирует изображение, обрезая его */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для изображения */
+    transition: transform 0.3s; /* Добавляем плавный переход */
+
+}
+
+.service-image:hover {
+    transform: scale(1.04);
+
+}
+
+
+.service-description h3 {
+    margin-top: -320px; /*     */
+    margin-bottom: 20px; /* Добавить отступ снизу для разделения с текстом */
+    color: #333; /* Цвет заголовка */
+    text-align: center; /* Текстовое выравнивание по цонтру */
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+.service-description p {
+    color: #666; /* Цвет текста описания */
+    text-align: left; /* Текстовое выравнивание слева */
+    padding: 0 50px; /* Отступы слева и справа для текста описания */
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+h2 {
+    margin-bottom: -30px; /* Отступ между заголовком и услугами */
+    color: #333; /* Цвет заголовка секции */
+    text-align: center; /* Текстовое выравнивание по цонтру */
+    padding: 80px;
+    font-family: 'Open Sans', sans-serif; /* Устанавливаем шрифт Open Sans */
+}
+
+.service-item a {
+    display: block; /* Чтобы ссылка занимала все пространство */
+}
