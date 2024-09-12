@@ -1,0 +1,164 @@
+
+.contact-container {
+    display: flex; /* Flexbox для расположения элементов */
+    justify-content: flex-start; /* Располагаем элементы с левой стороны */
+    max-width: 1000px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центруем контейнер */
+}
+
+
+
+.contact-form {
+    flex: 1; /* Занимает всё доступное пространство */
+    margin-right: 20px; /* Отступ справа */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column; /* Расположение элементов по вертикали */
+}
+
+.contact-form label {
+    margin-bottom: 5px; /* Отступ снизу для метки */
+}
+
+.contact-form input {
+    margin-bottom: 15px; /* Отступ снизу для поля ввода */
+    padding: 10px; /* Отступ внутри поля ввода */
+    border: 1px solid #000; /* Чёрная обводка */
+    border-radius: 5px; /* Овальные углы */
+    transition: border-color 0.3s; /* Плавный переход для цвета рамки */
+}
+
+.contact-form input:focus {
+    border-color: #007bff; /* Изменение цвета рамки при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"], /* Добавляем поддержку для телефонного номера */
+textarea {
+    width: 500px; /* Фиксированная ширина для всех полей */
+    max-width: 100%; /* Отзывчивость */
+    padding: 10px; /* Отступ внутри поля */
+    margin-bottom: 15px; /* Отступ между полями */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 5px; /* Скругленные углы */
+    box-sizing: border-box; /* Учитывает padding и border */
+}
+
+.submit-button {
+    width: 250px; /* Ограничение ширины кнопки отправки */
+    color: black; /* Цвет текста */
+    padding: 10px; /* Отступ внутри кнопки */
+    border: 1px solid #000; /* Чёрная обводка */
+    border-radius: 5px; /* Овальные углы */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s, border-color 0.3s; /* Плавный переход */
+    margin-top: 20px; /* Отступ сверху для кнопки */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+    border-color: #0056b3; /* Изменение цвета рамки при наведении */
+}
+
+/* Также обновим стили для кнопок социальных сетей, чтобы они соответствовали новому стилю */
+.social-button {
+    background-color: #white; /* Цвет кнопок по умолчанию */
+    color: black; /* Цвет текста по умолчанию */
+    padding: 15px; /* Отступ внутри кнопки */
+    border: 1px solid #000; /* Чёрная обводка */
+    border-radius: 5px; /* Овальные углы */
+    text-align: center; /* Центрируем текст */
+    margin-bottom: 10px; /* Отступ между кнопками */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: column; /* Расположение кнопок по вертикали */
+    margin-top: 20px; /* Отступ сверху, если необходимо */
+    margin-left: 0px;
+    align-self: flex-start; /* Выравниваем элементы влево */
+    margin-left: 0; /* Убираем отступ слева, если он есть */
+}
+
+
+
+.telegram:hover {
+    background-color: #00A3E0; /* Более яркий голубой цвет */
+    border-color: #00A3E0; /* Цвет рамки при наведении (голубой) */
+    color: white; /* Цвет текста при наведении (белый) */
+}
+
+.whatsapp:hover {
+    background-color: #25D366; /* Цвет кнопки при наведении (зеленый) для Ватсаппа */
+    border-color: #25D366; /* Цвет рамки при наведении (зеленый) */
+    color: white; /* Цвет текста при наведении (белый) */
+}
+
+.vk:hover {
+    background-color: #4A76A8; /* Цвет кнопки при наведении (синий) для ВКонтакте */
+    border-color: #4A76A8; /* Цвет рамки при наведении (синий) */
+    color: white; /* Цвет текста при наведении (белый) */
+}
+
+.privacy-notice {
+    align-self: flex-start; /* Выравниваем текст влево */
+    font-size: 0.85em; /* Мелкий шрифт */
+    color: #black; /* Цвет текста */
+    text-align: left; /* Текст выравнен влево */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+#contacts h2 {
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 70px;
+    padding-bottom: 0px;
+    margin-top: 60px;
+}
+
+#contacts h2 {
+    font-family: 'Playfair Display', serif; /* Применяем шрифт Playfair Display */
+    font-size: 2.5em; /* Увеличиваем размер */
+    text-align: center; /* Центрируем текст */
+    margin-bottom: 70px; /* Отступ снизу */
+    padding-bottom: 0px;
+    margin-top: 60px; /* Отступ сверху */
+}
+
+.form-intro {
+    font-size: 1.2em; /* Увеличиваем размер текста для большей выразительности */
+    margin-bottom: 20px; /* Отступ снизу */
+    margin-left: 85px; /* Отступ слева */
+    font-weight: bold; /* Жирный шрифт */
+    letter-spacing: 1px; /* Расстояние между буквами */
+    margin-left: 0; /* Убираем отступ слева */
+}
+
+#contacts h3 {
+    font-family: 'Playfair Display', serif; /* Применяем шрифт Playfair Display */
+    text-align: center; /* Центрируем текст */
+    margin-bottom: 50px; /* Отступ снизу */
+    margin-top: 0px; /* Отступ сверху */
+}
+
+.email-link, .phone-number {
+    font-family: 'Open Sans', sans-serif; /* Тонкий и чистый шрифт */
+    font-size: 1em; /* Небольшой размер шрифта */
+    color: #222; /* Темный цвет для текста */
+    font-weight: normal; /* Обычный (не жирный) текст */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.email-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+

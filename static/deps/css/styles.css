@@ -58,9 +58,9 @@ h2, p {
 .hero h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2em;
-    border-bottom: 2px solid #dedede;
     padding-bottom: 10px;
     margin-top: 200px; /* Увеличенный отступ сверху */
+    color: #ffffff; /* Цвет текста */
 }
 
 .hero-overlay {
@@ -92,7 +92,7 @@ h2, p {
     font-size: 20px; /* Размер текста */
     color: #ffffff; /* Цвет текста */
     background-color: transparent; /* Прозрачный фон */
-    border: 2px solid #ffffff; /* Белая рамка */
+    border: 1px solid #ffffff; /* Белая рамка */
     border-radius: 25px; /* Закругленные углы для овальной формы */
     text-decoration: none; /* Убираем подчеркивание */
     transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */

@@ -1,41 +1,38 @@
-
 .service-item {
     display: flex;
-    align-items: center; /* Центрировать по вертикали */
-    margin-bottom: 40px; /* Увеличенный отступ между услугами */
-    padding: 15px; /* Отступ внутри элемента */
+    align-items: stretch; /* Выровнять элементы по высоте */
+    margin-bottom: 0px;
     padding: 50px;
-
 }
 
 .service-description {
-    flex-grow: 1; /* Это позволяет тексту занимать всю доступную ширину */
+    position: relative; /* Для позиционирования кнопки */
+    display: flex;
+    flex-direction: column; /* Расположение элементов по вертикали */
+    justify-content: space-between; /* Создать пространство между элементами */
+    padding: 0 15px; /* Небольшие отступы */
+    height: 485px; /* Занять всю высоту родителя */
+    overflow: hidden; /* Скрывает любые переполненные элементы */
 }
 
-
-
-
 .service-image {
-    width: 35%; /* Оставляем как есть или измените на фиксированное значение */
-    height: auto; /* Чтобы сохранить пропорции изображения */
-    margin-right: 20px;
-    object-fit: cover;  /* Пропорционально масштабирует изображение, обрезая его */
+    width: 450px; /* Замените на нужное значение */
+    height: 500px; /* Замените на нужное значение */
+    margin-right: 50px;
+    object-fit: cover; /* Пропорционально масштабирует изображение, обрезая его */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для изображения */
     transition: transform 0.3s; /* Добавляем плавный переход */
-
 }
 
 .service-image:hover {
     transform: scale(1.04);
-
 }
 
-
 .service-description h3 {
-    margin-top: -320px; /*     */
+    margin-top: 10px;
     margin-bottom: 20px; /* Добавить отступ снизу для разделения с текстом */
     color: #333; /* Цвет заголовка */
-    text-align: center; /* Текстовое выравнивание по цонтру */
+    text-align: center; /* Текстовое выравнивание по центру */
     font-family: 'PT Sans Caption', sans-serif;
 }
 
@@ -44,16 +41,40 @@
     text-align: left; /* Текстовое выравнивание слева */
     padding: 0 50px; /* Отступы слева и справа для текста описания */
     font-family: 'PT Sans Caption', sans-serif;
+    overflow-wrap: break-word;  /* Позволяет переноса длинных слов */
+    word-wrap: break-word; /* Также переносит длинные слова */
+    max-width: calc(100% - 100px); /* Убедитесь, что ширина не превышает 100% */
 }
 
-h2 {
-    margin-bottom: -30px; /* Отступ между заголовком и услугами */
-    color: #333; /* Цвет заголовка секции */
-    text-align: center; /* Текстовое выравнивание по цонтру */
-    padding: 80px;
-    font-family: 'Open Sans', sans-serif; /* Устанавливаем шрифт Open Sans */
+#services h2 {
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 0px;
+    margin-top: 60px;
 }
 
 .service-item a {
     display: block; /* Чтобы ссылка занимала все пространство */
+}
+
+.btn2 {
+    margin-top: auto; /* Кнопка будет прижиматься к нижней части */
+    display: inline-block;
+    padding: 15px 40px; /* Увеличьте другие значения, если хотите кнопку шире */
+    color: #000; /* Цвет текста черный */
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid #000; /* Черная рамка */
+    border-radius: 40px; /* Овальная форма */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Плавный переход для цвета и масштаба */
+    align-self: center; /* Центрировать кнопку внутри flex-контейнера */
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+}
+
+.btn2:hover {
+    background-color: #333; /* Темный фон при наведении */
+    color: #fff; /* Светлый цвет текста при наведении */
+
 }

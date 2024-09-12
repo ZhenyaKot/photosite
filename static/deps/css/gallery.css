@@ -18,10 +18,9 @@
     font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
     font-size: 2em;
     text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #dedede;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 50px;
 }
 
 
@@ -92,7 +91,7 @@
     font-size: 20px; /* Размер текста */
     color: #000000; /* Цвет текста */
     background-color: transparent; /* Прозрачный фон */
-    border: 2px solid #000000; /* черная рамка */
+    border: 1px solid #000000; /* черная рамка */
     border-radius: 25px; /* Закругленные углы для овальной формы */
     text-decoration: none; /* Убираем подчеркивание */
     transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */

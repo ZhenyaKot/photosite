@@ -35,6 +35,7 @@ header {
 
 .navigation-menu li {
     margin: 0 30px; /* Увеличиваем отступы между элементами меню */
+    position: relative; /* Позволяет использовать псевдоэлемент для подчеркивания */
 }
 
 .navigation-menu a {
@@ -42,7 +43,7 @@ header {
     text-decoration: none; /* Убираем подчеркивание текста */
     font-size: 20px; /* Увеличенный размер шрифта */
     font-weight: bold; /* Жирный шрифт */
-    transition: color 0.8s, text-shadow 0.5s; /* Плавные переходы для цвета и тени текста */
+    transition: color 0.8s; /* Плавные переходы для цвета */
     text-transform: uppercase; /* Заглавные буквы */
     letter-spacing: 1px; /* Пробел между буквами */
 }
@@ -50,7 +51,30 @@ header {
 /* Эффект при наведении на ссылки меню */
 .navigation-menu a:hover {
     color: #F5DEB3; /* Цвет текста при наведении */
-    text-shadow: 0 0 10px rgba(245, 222, 179, 0.7), 0 0 20px rgba(255, 215, 0, 0.5); /* Тень текста для выделения */
+}
+
+/* Подчеркивание при наведении */
+.navigation-menu a::after {
+    content: ''; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Позиционируем относительно родителя */
+    left: 0; /* Начинаем от начала ссылки */
+    right: 0; /* Заканчиваем в конце ссылки */
+    bottom: -5px; /* Позиция подчеркивания ниже текста */
+    height: 2px; /* Высота подчеркивания */
+    background-color: transparent; /* Скрываем подчеркивание по умолчанию */
+    transform: scaleX(0); /* Скрываем подчеркивание по умолчанию */
+    transition: transform 0.3s ease; /* Плавный переход для появления */
+}
+
+/* Подчеркивание при наведении */
+.navigation-menu a:hover::after {
+    transform: scaleX(1); /* Показываем подчеркивание при наведении */
+}
+
+/* Находим подчеркивание при наведении со скроллом */
+.header-nav.scrolled .navigation-menu a:hover::after {
+    background-color: black; /* Цвет подчеркивания при наведении на слово при скролле */
+    transform: scaleX(1); /* Показываем подчеркивание при наведении */
 }
 
 /* Эффект при прокрутке страницы */
@@ -61,4 +85,9 @@ header {
 
 .header-nav.scrolled .navigation-menu a {
     color: black; /* Меняем цвет текста в меню при скролле */
+}
+
+/* Для черного подчеркивания при навигации вверху страницы */
+.navigation-menu a:hover::after {
+    background-color: #F5DEB3; /* Цвет подчеркивания в верхней части экрана */
 }
