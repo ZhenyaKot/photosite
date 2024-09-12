@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 def index(request):
     context = {
-        'title': 'Фотограф Meriii Mazi',
+        'title': 'Фотограф Meri Mazi',
 
     }
 
