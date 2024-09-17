@@ -41,5 +41,75 @@ window.addEventListener('scroll', function() {
         }
     });
 
+// Получаем ссылку на кнопку
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Показываем/скрываем кнопку при прокрутке
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block"; // Показать кнопку
+    } else {
+        scrollToTopBtn.style.display = "none"; // Скрыть кнопку
+    }
+};
+
+// Прокрутка вверх
+scrollToTopBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Плавная прокрутка
+    });
+});
+
+
+
+
+let currentIndex = 0;
+
+function moveLeft(galleryId) {
+    const imagesContainer = document.getElementById(galleryId);
+    const totalImages = imagesContainer.children.length;
+
+    if (currentIndex > 0) {
+        currentIndex--;
+    }
+
+    // Прокрутка изображений
+    imagesContainer.style.transform = `translateX(-${currentIndex * 400}px)`;
+}
+
+function moveRight(galleryId) {
+    const imagesContainer = document.getElementById(galleryId);
+    const totalImages = imagesContainer.children.length;
+
+    if (currentIndex < totalImages - 1) {
+        currentIndex++;
+    }
+
+    // Прокрутка изображений
+    imagesContainer.style.transform = `translateX(-${currentIndex * 400}px)`;
+}
+
+
+
+
+
+
+
+
+
+// СКРИПТ ДЛЯ ПРОКРУТКИ ФОТОГРАФИЙ ВПРАВО И ВЛЕВО
+//<script>
+//        function moveRight(galleryId) {
+//            const gallery = document.getElementById(galleryId);
+//            gallery.scrollBy({ left: 210, top: 0, behavior: 'smooth' });
+//        }
+//
+//        function moveLeft(galleryId) {
+//            const gallery = document.getElementById(galleryId);
+//            gallery.scrollBy({ left: -210, top: 0, behavior: 'smooth' });
+//        }
+//    </script>
 
 

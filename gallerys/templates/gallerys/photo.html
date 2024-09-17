@@ -1,0 +1,82 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+     <link rel="stylesheet" href="{% static 'deps/css/photo.css' %}"> <!-- Подключение стилевого файла -->
+     <link rel="stylesheet" href="{% static 'deps/css/navigator_2.css' %}"> <!-- Подключение стилевого файла -->
+     <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+     <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотосессия</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Подключаем внешний файл стилей -->
+</head>
+<body>
+
+<header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#prices">Цены</a></li>
+            </ul>
+        </nav>
+</header>
+
+    <!-- Название фотосессии и описание -->
+    <section class="session-description">
+        <h1>Название Фотосессии</h1>
+        <p>
+            Описание фотосессии: Здесь вы можете добавить текст, описывающий фотосессию, её тематику, особенности и любые детали, которые хочется подчеркнуть. Это могут быть эмоции, идеи или цели съемки.
+        </p>
+    </section>
+
+    <!-- Галерея фотографий -->
+    <section class="photo-gallery">
+        <div class="gallery-grid">
+            <!-- Фото 1 -->
+            <div class="gallery-item">
+                <img src="{% static 'deps/images/list_photo/photo_2.jpg' %}" alt="Фотография 1">
+            </div>
+            <!-- Фото 2 -->
+            <div class="gallery-item">
+                <img src="{% static 'deps/images/list_photo/photo_3.jpg' %}" alt="Фотография 2">
+            </div>
+            <!-- Фото 3 -->
+            <div class="gallery-item">
+                <img src="{% static 'deps/images/list_photo/photo_4.jpg' %}" alt="Фотография 3">
+            </div>
+            <!-- Фото 4 -->
+            <div class="gallery-item">
+                <img src="{% static 'deps/images/list_photo/photo_5.jpg' %}" alt="Фотография 4">
+            </div>
+            <!-- Добавьте больше фотографий аналогично -->
+        </div>
+    </section>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+ <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+</body>
+</html>

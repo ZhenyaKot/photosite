@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/services.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/contact.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
@@ -25,8 +26,8 @@
     <!-- Заголовок сайта -->
     <div class="logo">
         <h1>
-            <span class="highlight">Фотограф</span><br>
-            <span class="highlight subtitle">Meri Mazi</span>
+            <span class="highlight">{{content_1}}</span><br>
+            <span class="highlight subtitle">{{content_2}}</span>
         </h1>
     </div>
 
@@ -101,7 +102,7 @@
             </div>
         </a>
     </div>
-    <a href="URL_для_дополнительных_работ" class="show-more">Показать еще работы</a>
+    <a href="{% url 'gallerys:genre' %}" class="show-more">Показать еще работы</a>
 </section>
 
 
@@ -161,7 +162,7 @@
     <div class="contact-container">
         <!-- Левая сторона: форма для заполнения -->
         <div class="contact-form">
-            <p class="form-intro">Оставьте заявку на съемку и я свяжусь с вами</p>
+            <p class="form-intro">Оставьте заявку на съемку, и я свяжусь с вами</p>
             <form action="submit_form.php" method="POST">
                 <label for="name">Имя:</label>
                 <input type="text" id="name" name="name" required>
@@ -200,6 +201,8 @@
         <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
         <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
     </footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
 
 <script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
 

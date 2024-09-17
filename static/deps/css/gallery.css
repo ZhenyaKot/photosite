@@ -5,7 +5,7 @@
     justify-content: center; /* Центрирование контейнера */
 }
 
-/* Стили для галереи */
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(150px, 1fr)); /* Три колонки с минимальной шириной 150px */
@@ -27,22 +27,22 @@
 
 /* Стили для элементов галереи */
 .gallery-item {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 0;
+    position: relative; /* Позволяет помещать дочерние элементы относительно него */
+    overflow: hidden; /* Скрывает часть содержимого, выходящего за пределы элемента */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход для увеличения и тени */
+    border-radius: 0; /* Убираем закругление углов */
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    width: 100%; /* Ширина изображения 100% от родительского элемента */
+    height: auto; /* Высота автоматически подстраивается */
+    border-radius: 5px; /* Закругление углов изображений */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Плавный переход для увеличения и затемнения */
 }
 
 /* Эффект увеличения при наведении */
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Увеличение элемента при наведении */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
 }
 

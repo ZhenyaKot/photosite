@@ -1,0 +1,91 @@
+{% load static %}
+<!-- Галерея работ -->
+
+<html>
+<head>
+        <link rel="stylesheet" href="{% static 'deps/css/gallery_2.css' %}"> <!-- Подключение стилевого файла -->
+        <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+        <link rel="stylesheet" href="{% static 'deps/css/catalog_photo_main.css' %}"> <!-- Подключение стилевого файла -->
+        <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+        <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Верхняя фотография -->
+<section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/portfolio_main.jpg' %}');">>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Портфолио</h1>
+    </div>
+</section>
+
+
+<header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#prices">Цены</a></li>
+            </ul>
+        </nav>
+</header>
+
+
+
+<section id="gallery" class="gallery-container">  <!-- Добавляем класс для центровки -->
+    <h2>Галерея работ</h2>
+    <div class="gallery-grid">
+        <a href="URL_для_работы_1" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_4.jpg' %}" alt="Работа 1">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+            <p class="shoot-date">Дата съемки: 01.01.2023</p>
+        </a>
+        <a href="URL_для_работы_2" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_2.jpg' %}" alt="Работа 2">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+            <p class="shoot-date">Дата съемки: 02.01.2023</p>
+        </a>
+        <a href="URL_для_работы_3" class="gallery-item">
+            <img src="{% static 'deps/images/list_photo/photo_3.jpg' %}" alt="Работа 3">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+            <p class="shoot-date">Дата съемки: 03.01.2023</p>
+        </a>
+        <!-- Добавляйте дополнительные работы аналогично -->
+    </div>
+
+</section>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+
+  <!-- Футер с контактной информацией и ссылками на социальные сети -->
+    <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+
+</body>
+</html>

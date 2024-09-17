@@ -1,0 +1,188 @@
+body {
+    margin: 0; /* Убирает внешние отступы у body */
+    padding: 0; /* Устанавливает внутренние отступы у body */
+}
+
+.hero {
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фон фиксирован */
+    background-size: cover; /* Фон масштабируется, чтобы покрыть весь элемент */
+    background-position: center center; /* Центрирование фона */
+    height: 500px; /* Занимает высоту 100% видимой области браузера */
+    width: 100%; /* Занимает всю ширину */
+    position: relative; /* Позволяет использовать абсолютное позиционирование внутри */
+    overflow: hidden; /* Скрывает любые элементы, выходящие за пределы */
+}
+
+.hero-overlay {
+    position: absolute; /* Позволяет наложить оверлей на изображение */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный оверлей */
+    z-index: 1; /* Обеспечивает, что оверлей будет поверх фона */
+
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-80%); /* Сдвигаем на половину высоты для точного центрирования */
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif; /* Шрифт для заголовка h1 */
+    font-size: 4rem; /* Увеличиваем размер шрифта, настройте по желанию */
+    text-transform: uppercase; /* Преобразует текст в заглавные буквы */
+    letter-spacing: 0.05em; /* Устанавливаем небольшое расстояние между буквами, настройте значение по желанию */
+    margin: 0; /* Убираем стандартные отступы */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Добавляем тень к тексту */
+}
+
+
+
+
+.gallery-block {
+    background-color: #ffffff; /* Устанавливает белый фон для каждого блока галереи */
+    border-radius: 0px; /* Закругляет углы блока */
+    padding: 20px; /* Внутренние отступы для блока */
+    margin-bottom: 40px; /* Отступ снизу, чтобы разделить блоки */
+    margin-top: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Добавляет тень к блоку */
+    position: relative; /* Позволяет элементу располагаться относительно его нормальной позиции */
+}
+
+.gallery-title {
+    font-size: 24px; /* Размер шрифта заголовка блока */
+    margin-bottom: 10px; /* Отступ снизу заголовка */
+    text-align: center; /* Центрирует заголовок по горизонтали */
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+}
+
+.gallery {
+    display: flex; /* Использует флексбокс для выравнивания дочерних элементов */
+    align-items: center; /* Центрирует элементы по вертикали */
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    overflow: hidden; /* Скрывает элементы, выходящие за пределы контейнера */
+    margin: 20px 0;
+}
+
+.gallery-images {
+    overflow: hidden; /* Скрывает все, что за пределами контейнера */
+    display: flex; /* Использует флексбокс для расположения изображений в ряд */
+    transition: transform 0.3s ease; /* Плавный переход при изменении положения */
+
+}
+
+.gallery-item {
+    position: relative; /* Позволяет помещать дочерние элементы относительно него */
+    overflow: hidden; /* Скрывает часть содержимого, выходящего за пределы элемента */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы для увеличения и тени */
+}
+
+/* Эффект увеличения при наведении на галерею элемента */
+.gallery-item:hover {
+    transform: scale(1.05); /* Увеличение элемента при наведении */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+}
+
+.gallery-images img {
+    width: 400px; /* Ширина фотографий */
+    margin: 0 15px; /* Отступы между изображениями */
+    border-radius: 0px; /* Закругляет углы изображений */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Плавные переходы для изменений */
+}
+
+/* Эффект при наведении на изображение */
+.gallery-item:hover img {
+    transform: scale(1.01); /* Увеличение изображения при наведении */
+    filter: brightness(80%); /* Затемнение изображения */
+}
+
+.arrow {
+    position: absolute; /* Позиционирование стрелок внутри блока */
+    top: 50%; /* По вертикали в центре */
+    transform: translateY(-50%); /* Корректировка для вертикального выравнивания */
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для стрелок */
+    border: none; /* Убирает границу у кнопок */
+    cursor: pointer; /* Курсор как указатель */
+    border-radius: 50%; /* Круглые кнопки */
+    width: 34px; /* Ширина стрелки */
+    height: 34px; /* Высота стрелки */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для стрелок */
+    font-size: 15px;
+    padding: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавные переходы */
+    z-index: 10; /* Убедитесь, что кнопка выше других элементов */
+
+}
+
+.arrow:hover {
+     background-color: gray; /* Меняем фон на серый при наведении */
+    color: white; /* Изменяем цвет текста на белый для контраста */
+    padding: 5px; /* Увеличиваем внутренний отступ для эффекта увеличения */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+.arrow-left {
+    left: 10px; /* Позиция стрелки слева */
+}
+
+.arrow-right {
+    right: 10px; /* Позиция стрелки справа */
+}
+
+.view-gallery {
+    text-align: center; /* Центрирует текст под блоком по центру */
+    margin-top: 15px; /* Отступ сверху */
+}
+
+.view-gallery a {
+    color: #000000; /* Цвет текста для ссылки */
+    text-decoration: none; /* Убирает подчеркивание для ссылки */
+    font-weight: bold; /* Полужирный текст для ссылки */
+    font-family: 'Playfair Display SC', serif;
+}
+
+.view-gallery a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Оверлей с текстом */
+.overlay {
+    position: absolute; /* Абсолютное позиционирование относительно родителя */
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Перемещение центра оверлея */
+    display: flex; /* Гибкий контейнер для текста */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    width: 160px; /* Фиксированная ширина оверлея */
+    height: 60px; /* Фиксированная высота оверлея */
+    border: 2px solid white; /* Белая рамка */
+    border-radius: 30px; /* Закругляем углы оверлея */
+    z-index: 2; /* Находится поверх изображения */
+    background-color: transparent; /* Прозрачный фон по умолчанию */
+    transition: background-color 0.3s ease; /* Плавный переход для фона оверлея */
+}
+
+/* Стили для текста внутри оверлея */
+.overlay span {
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+    font-size: 14px; /* Размер текста */
+    color: white; /* Цвет текста белым */
+    text-align: center; /* Выравнивание текста по центру */
+    z-index: 3; /* Находится поверх оверлея */
+}
+
+/* Эффект при наведении на оверлей */
+.gallery-item:hover .overlay {
+    background-color: rgba(255, 255, 255, 0.3); /* Прозрачный белый фон при наведении */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Скрытие тени при наведении */
+}
+
+
