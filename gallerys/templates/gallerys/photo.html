@@ -46,22 +46,13 @@
     <section class="photo-gallery">
         <div class="gallery-grid">
             <!-- Фото 1 -->
+            {% for photo in photos %}
             <div class="gallery-item">
-                <img src="{% static 'deps/images/list_photo/photo_2.jpg' %}" alt="Фотография 1">
+                <img src="{{ photo.image.url }}" alt="{{ forloop.counter }} ">
             </div>
-            <!-- Фото 2 -->
-            <div class="gallery-item">
-                <img src="{% static 'deps/images/list_photo/photo_3.jpg' %}" alt="Фотография 2">
-            </div>
-            <!-- Фото 3 -->
-            <div class="gallery-item">
-                <img src="{% static 'deps/images/list_photo/photo_4.jpg' %}" alt="Фотография 3">
-            </div>
-            <!-- Фото 4 -->
-            <div class="gallery-item">
-                <img src="{% static 'deps/images/list_photo/photo_5.jpg' %}" alt="Фотография 4">
-            </div>
-            <!-- Добавьте больше фотографий аналогично -->
+            {% empty %}
+            <p>Нет фотографий для отображения</p>
+            {% endfor %}
         </div>
     </section>
 

@@ -37,7 +37,8 @@ class Photoshoot(models.Model):
 
 class Photo(models.Model):
     image = models.ImageField(upload_to='gallerys_images/', blank=True, null=True, verbose_name='Фотография')
-    photoshoot = models.ForeignKey(to=Photoshoot, on_delete=models.CASCADE, verbose_name='Фотосъемка')
+    photoshoot = models.ForeignKey(to=Photoshoot, related_name='photos', on_delete=models.CASCADE,
+                                   verbose_name='Фотосъемка')
 
     class Meta:
         db_table = 'photo'

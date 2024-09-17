@@ -5,6 +5,6 @@ app_name = 'gallerys'
 
 urlpatterns = [
     path('catalog/', views.catalog, name='catalog'),
-    path('gallery/<int:photoshoot_id>', views.photo, name='photo'),
+    path('photo/<int:photoshoot_id>/', views.photo, name='photo'),
     path('genre/', views.genre, name='genre'),
 ]

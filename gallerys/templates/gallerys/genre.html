@@ -37,7 +37,7 @@
     <header class="header-nav">  <!-- Новый класс для навигации -->
         <nav>
             <ul class="navigation-menu">
-                <li><a href="#home">Главная</a></li>
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#gallery">Галерея</a></li>
                 <li><a href="#services">Услуги</a></li>
@@ -53,18 +53,14 @@
         <div class="gallery">
             <button class="arrow arrow-left" onclick="moveLeft('portraits')">&#9664;</button>
             <div class="gallery-images" id="portraits">
+                {% for photo in first_photos_id_3 %}
                 <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/portrait_1.jpg' %}" alt="Портрет 1">
+                    <img src="{{ photo.image.url }}" alt="{{ forloop.counter }}">
                     <div class="overlay"><span>Смотреть работы</span></div>
                 </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/portrait_2.jpg' %}" alt="Портрет 2">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/portrait_3.jpg' %}" alt="Портрет 3">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
+                {% empty %}
+                <p>Нет фотографий для отображения</p>
+            {% endfor %}
             </div>
             <button class="arrow arrow-right" onclick="moveRight('portraits')">&#9654;</button>
         </div>
@@ -78,18 +74,14 @@
         <div class="gallery">
             <button class="arrow arrow-left" onclick="moveLeft('fashion')">&#9664;</button>
             <div class="gallery-images" id="fashion">
+                {% for photo in first_photos_id_2 %}
                 <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/fashion_1.jpg' %}" alt="Фешн 1">
+                    <img src="{{ photo.image.url }}" alt="{{ forloop.counter }}">
                     <div class="overlay"><span>Смотреть работы</span></div>
                 </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/fashion_2.jpg' %}" alt="Фешн 2">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/fashion_3.jpg' %}" alt="Фешн 3">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
+                {% empty %}
+                <p>Нет фотографий для отображения</p>
+                {% endfor %}
             </div>
             <button class="arrow arrow-right" onclick="moveRight('fashion')">&#9654;</button>
         </div>
@@ -103,18 +95,14 @@
         <div class="gallery">
             <button class="arrow arrow-left" onclick="moveLeft('beauty')">&#9664;</button>
             <div class="gallery-images" id="beauty">
+                {% for photo in first_photos_id_1 %}
                 <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/beauty_1.jpg' %}" alt="Бьюти 1">
+                    <img src="{{ photo.image.url }}" alt="{{ forloop.counter }}">
                     <div class="overlay"><span>Смотреть работы</span></div>
                 </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/beauty_2.jpg' %}" alt="Бьюти 2">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/beauty_3.jpg' %}" alt="Бьюти 3">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
+                {% empty %}
+                <p>Нет фотографий для отображения</p>
+                {% endfor %}
             </div>
             <button class="arrow arrow-right" onclick="moveRight('beauty')">&#9654;</button>
         </div>
@@ -128,18 +116,14 @@
         <div class="gallery">
             <button class="arrow arrow-left" onclick="moveLeft('studio')">&#9664;</button>
             <div class="gallery-images" id="studio">
+                {% for photo in first_photos_id_4 %}
                 <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/studio_1.jpg' %}" alt="Студийная 1">
+                    <img src="{{ photo.image.url }}" alt="{{ forloop.counter">
                     <div class="overlay"><span>Смотреть работы</span></div>
                 </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/studio_2.jpg' %}" alt="Студийная 2">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
-                <a href="#" class="gallery-item">
-                    <img src="{% static 'deps/images/photo_genre/studio_3.jpg' %}" alt="Студийная 3">
-                    <div class="overlay"><span>Смотреть работы</span></div>
-                </a>
+                {% empty %}
+                <p>Нет фотографий для отображения</p>
+                {% endfor %}
             </div>
             <button class="arrow arrow-right" onclick="moveRight('studio')">&#9654;</button>
         </div>
