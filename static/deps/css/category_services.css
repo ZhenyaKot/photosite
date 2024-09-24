@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif; /* Шрифт Open Sans */
+}
+
+.service-title, .price-title {
+    color: #333; /* Цвет только для заголовков, к которым применены классы */
+}
+
+.centered-title {
+    text-align: center; /* Центрируем заголовок */
+}
+
+.description {
+    font-size: 1.2em;
+}
+
+.service-content {
+    display: flex;
+    justify-content: space-between; /* Размещаем блоки с услугами рядом */
+    margin: 50px 0;
+}
+
+.services-list {
+    flex: 1.8; /* Делаем блок с услугами шире */
+}
+
+.stylist-services {
+    flex: 1; /* Блок с услугами стилиста уже */
+    padding-left: 40px; /* Отступ слева */
+    border-left: 2px solid  /* Линия и цвет по левому краю */
+}
+
+.service-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.service-list li {
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 1.5em;
+
+}
+
+.stylist-price {
+    font-size: 1.1em;
+
+}
+
+.button-container {
+    text-align: center; /* Центрирование текста внутри контейнера */
+    margin: 20px 0; /* Отступ сверху и снизу для добавления пространства */
+}
+
+.btn-book {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px 30px; /* Отступ внутри кнопки */
+    font-size: 20px; /* Размер текста */
+    color: #000000; /* Цвет текста */
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid #000000; /* Белая рамка */
+    border-radius: 20px; /* Закругленные углы для овальной формы */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
+    z-index: 2; /* Кнопка выше наложки */
+    cursor: pointer; /* Указатель для кликабельности */
+
+}
+
+.btn-book:hover {
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.portfolio-preview {
+    width: 100%; /* Обеспечим полную ширину для родительского контейнера */
+}
+
+.portfolio-preview h2 {
+    text-align: center; /* Центрирование заголовка */
+    margin-bottom: 20px; /* Отступ снизу для добавления пространства */
+    margin-top: 50px; /* Отступ снизу для добавления пространства */
+}
+
+.portfolio-images {
+    display: flex; /* Использование flexbox для размещения изображений в ряд */
+    justify-content: center; /* Центрируем изображения в контейнере */
+    gap: 20px; /* Увеличиваем отступ между изображениями */
+    padding: 10px 0; /* Отступ сверху и снизу для изображений */
+}
+
+.portfolio-images a {
+    flex: 1; /* Установка равной ширины для всех изображений */
+
+    box-sizing: border-box; /* Включение отступов и границ в общий размер */
+}
+
+.portfolio-images img {
+    width: 350px; /* Ширина изображения 100% от контейнера */
+    height: auto; /* Автоматически подбираем высоту, чтобы сохранить пропорции */
+    transition: transform 0.3s; /* Плавный переход для эффекта увеличения */
+}
+
+.portfolio-images img:hover {
+    transform: scale(1.05); /* Увеличение размера изображения при наведении */
+}
+
+.button-container {
+    text-align: center; /* Центрирование кнопки */
+    margin: 20px 0; /* Отступ сверху и снизу для добавления пространства */
+}
+
+.btn-view-all {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px 30px; /* Отступ внутри кнопки */
+    font-size: 20px; /* Размер текста */
+    color: #000000; /* Цвет текста */
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid #000000; /* Белая рамка */
+    border-radius: 20px; /* Закругленные углы для овальной формы */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s, transform 0.3s; /* Плавные переходы */
+    z-index: 2; /* Кнопка выше наложки */
+    cursor: pointer; /* Указатель для кликабельности */
+}
+
+.btn-view-all:hover {
+     transform: scale(1.05); /* Увеличение кнопки при наведении */
+}

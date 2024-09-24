@@ -24,7 +24,8 @@ from photographer_site import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls'), name='main'),
-    path('gallerys/', include('gallerys.urls'), name='gallerys'),  # Подключаем URLs из gallerys
+    path('gallerys/', include('gallerys.urls'), name='gallerys'),
+    path('services/', include('services.urls'), name='services'),
 ]
 
 if settings.DEBUG:

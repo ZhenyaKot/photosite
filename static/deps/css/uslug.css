@@ -1,7 +1,6 @@
 body {
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Убирает внешние отступы у body */
+    padding: 0; /* Устанавливает внутренние отступы у body */
 }
 
 .hero {
@@ -37,31 +36,9 @@ body {
 
 .hero-text h1 {
     font-family: 'Playfair Display', serif; /* Шрифт для заголовка h1 */
-    font-size: 4rem; /* Увеличиваем размер шрифта, настройте по желанию */
+    font-size: 3rem; /* Увеличиваем размер шрифта, настройте по желанию */
     text-transform: uppercase; /* Преобразует текст в заглавные буквы */
     letter-spacing: 0.05em; /* Устанавливаем небольшое расстояние между буквами, настройте значение по желанию */
     margin: 0; /* Убираем стандартные отступы */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Добавляем тень к тексту */
-}
-
-.shoot-date {
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif; /* Тонкий и чистый шрифт */
-    margin-top: 0px;
-    font-size: 15px; /* Размер шрифта для названия фотосессии */
-    text-decoration: none; /* Убирает подчеркивание */
-}
-
-.shoot-date a {
-    text-decoration: none; /* Отключает подчеркивание для ссылок */
-    color: inherit; /* Наследует цвет родительского элемента */
-}
-
-.shoot-date a:visited,
-.shoot-date a:hover,
-.shoot-date a:active {
-    text-decoration: none; /* Отключает подчеркивание для всех состояний ссылки */
-    color: inherit; /* Устанавливает цвет ссылки во всех состояниях */
 }

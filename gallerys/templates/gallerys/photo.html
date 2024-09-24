@@ -24,10 +24,10 @@
 <header class="header-nav">  <!-- Новый класс для навигации -->
         <nav>
             <ul class="navigation-menu">
-                <li><a href="#home">Главная</a></li>
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
                 <li><a href="#about">Обо мне</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#services">Услуги</a></li>
+                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li><a href="#prices">Цены</a></li>
             </ul>
@@ -36,9 +36,9 @@
 
     <!-- Название фотосессии и описание -->
     <section class="session-description">
-        <h1>Название Фотосессии</h1>
+        <h1>{{ photos.0.photoshoot.name }}</h1>
         <p>
-            Описание фотосессии: Здесь вы можете добавить текст, описывающий фотосессию, её тематику, особенности и любые детали, которые хочется подчеркнуть. Это могут быть эмоции, идеи или цели съемки.
+            {{ photos.0.photoshoot.description }}
         </p>
     </section>
 

@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'deps/css/category_services.css' %}"> <!-- Подключение стилевого файла -->
+     <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/uslug.css' %}"> <!-- Подключение стилевого файла -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+<section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/photoshoot_type.jpg' %}');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Прайс и услуги </h1>
+    </div>
+</section>
+
+
+<header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#prices">Цены</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<section class="photography-service">
+    <div class="container">
+        <h1 class="centered-title">{{ category }}</h1>
+
+        <div class="service-content">
+            <div class="services-list">
+                <h2 class="service-title">Что входит в фотосессию:</h2>
+                <ul class="service-list">
+                    <li><strong>Время:</strong> 2 часа съемки</li>
+                    <li><strong>Итоговое количество фото:</strong> 50 снимков</li>
+                    <li><strong>Обработанные фото:</strong> 15 отобранных и обработанных изображений</li>
+                    <li><strong>Консультация:</strong> Помощь в выборе стиля и образов</li>
+                    <li><strong>Бронирование студии:</strong> Включено в стоимость</li>
+                    <li><strong>Срок готовности:</strong> 1 неделя</li>
+                    <li><strong>Разнообразные фоны:</strong> Выбор из 5 различных фонов</li>
+                    <li><strong>Профессиональный осветитель:</strong> Включен в стоимость</li>
+                    <li><strong>Препарация образов:</strong> Подготовка перед съемкой</li>
+                </ul>
+                <h2 class="price-title">Стоимость фотосессии:</h2>
+                <p class="price">Цена: <strong>5000 руб.</strong></p>
+            </div>
+
+            <div class="stylist-services">
+                <h2 class="service-title">Услуги стилиста:</h2>
+                <ul class="service-list">
+                    <li>Подбор образов</li>
+                    <li>Макияж и прическа</li>
+                    <li>Консультационные услуги</li>
+                </ul>
+                <p class="stylist-price"></p>
+                <h2 class="price-title">Стоимость фотосессии с услугами стилиста:</h2>
+                <p class="price">Цена: <strong>8000 руб.</strong></p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="/gallery/">
+            <button class="btn-book">Забронировать</button>
+            </a>
+        </div>
+
+<div class="portfolio-preview">
+    <h2>Посмотрите мои работы из этой категории:</h2>
+    <div class="portfolio-images">
+        {% for photo in first_photos %}
+        <a href="{% url 'gallerys:photo' photo.photoshoot.slug %}">
+            <img src="{{ photo.image.url }}" alt="{{ forloop.counter }}">
+        </a>
+        {% endfor %}
+    </div>
+    <div class="button-container">
+        <a href="{% url 'gallerys:catalog' category.slug %}">
+        <button class="btn-view-all">Смотреть все работы</button>
+        </a>
+    </div>
+</div>
+
+    </div>
+</section>
+
+<footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+</body>
+</html>

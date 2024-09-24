@@ -1,7 +1,6 @@
-import datetime
+from datetime import date
 
 from django.db import models
-from django.utils import timezone
 
 
 # Create your models here.
@@ -23,7 +22,7 @@ class Photoshoot(models.Model):
     name = models.CharField(max_length=150, unique=True, verbose_name='Название')
     slug = models.SlugField(max_length=150, unique=True, blank=True, null=True, verbose_name='URL')
     description = models.TextField(blank=True, null=True, verbose_name='Описание')
-    shooting_date = models.DateTimeField(blank=True, default=datetime.datetime.now, verbose_name='Дата Съемки')
+    shooting_date = models.DateField(blank=True, default=date.today, verbose_name='Дата Съемки')
     category = models.ForeignKey(to=Categories, on_delete=models.CASCADE, verbose_name='Категория')
 
     class Meta:

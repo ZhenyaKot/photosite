@@ -65,37 +65,37 @@
     <section id="gallery">
     <h2>Галерея работ</h2>
     <div class="gallery-grid">
-        <a href="{% url 'gallerys:photo' 5 %}" class="gallery-item">
+        <a href="{% url 'gallerys:photo' 'paparacii' %}" class="gallery-item">
             <img src="{% static 'deps/images/list_photo/photo_4.jpg' %}" alt="Работа 1">
             <div class="overlay">
                 <span>Смотреть работы</span>
             </div>
         </a>
-        <a href="{% url 'gallerys:photo' 1 %}" class="gallery-item">
+        <a href="{% url 'gallerys:photo' 'bardovoe-pyatno' %}" class="gallery-item">
             <img src="{% static 'deps/images/list_photo/photo_2.jpg' %}" alt="Работа 2">
             <div class="overlay">
                 <span>Смотреть работы</span>
             </div>
         </a>
-        <a href="{% url 'gallerys:photo' 6 %}" class="gallery-item">
+        <a href="{% url 'gallerys:photo' 'strogost' %}" class="gallery-item">
             <img src="{% static 'deps/images/list_photo/photo_3.jpg' %}" alt="Работа 3">
             <div class="overlay">
                 <span>Смотреть работы</span>
             </div>
         </a>
-        <a href="{% url 'gallerys:photo' 7 %}" class="gallery-item">
+        <a href="{% url 'gallerys:photo' 'temnyj-stil' %}" class="gallery-item">
             <img src="{% static 'deps/images/list_photo/photo_5.jpg' %}" alt="Работа 4">
             <div class="overlay">
                 <span>Смотреть работы</span>
             </div>
         </a>
-        <a href="{% url 'gallerys:photo' 3 %}" class="gallery-item">
+        <a href="{% url 'gallerys:photo' 'nezhnost' %}" class="gallery-item">
             <img src="{% static 'deps/images/list_photo/photo_6.jpg' %}" alt="Работа 5">
             <div class="overlay">
                 <span>Смотреть работы</span>
             </div>
         </a>
-        <a href="{% url 'gallerys:photo' 8 %}" class="gallery-item">
+        <a href="{% url 'gallerys:photo' 'krasnaya-blondinka' %}" class="gallery-item">
             <img src="{% static 'deps/images/list_photo/photo_7.jpg' %}" alt="Работа 6">
             <div class="overlay">
                 <span>Смотреть работы</span>
@@ -112,46 +112,46 @@
     <h2>Услуги</h2>
 
     <div class="service-item">
-        <a href="ссылка_на_портретную_съемку">
+        <a href="{% url 'services:shooting_type' 'portretnaya-semka' %}">
             <img src="{% static 'deps/images/services/portrait.jpg' %}" class="service-image">
         </a>
         <div class="service-description">
             <h3>Портретная съемка</h3>
             <p>Краткое описание портретной съемки. Мы предлагаем профессиональные услуги по созданию портретов в различных стилях.</p>
-            <a href="ссылка_на_портретную_съемку" class="btn2">Смотреть</a>
+            <a href="{% url 'services:shooting_type' 'portretnaya-semka' %}" class="btn2">Смотреть</a>
         </div>
     </div>
 
     <div class="service-item">
-        <a href="ссылка_на_фешн_съемку">
+        <a href="{% url 'services:shooting_type' 'feshn-semka' %}">
             <img src="{% static 'deps/images/services/fashion.jpg' %}" class="service-image">
         </a>
         <div class="service-description">
             <h3>Фешн съемка</h3>
             <p>Краткое описание фешн съемки. Стильные фотографии, которые помогут выделить вашу индивидуальность.</p>
-            <a href="ссылка_на_фешн_съемку" class="btn2">Смотреть</a>
+            <a href="{% url 'services:shooting_type' 'feshn-semka' %}" class="btn2">Смотреть</a>
         </div>
     </div>
 
     <div class="service-item">
-        <a href="ссылка_на_бьюти_съемку">
+        <a href="{% url 'services:shooting_type' 'byuti-semka' %}">
             <img src="{% static 'deps/images/services/beauty.jpg' %}" class="service-image">
         </a>
         <div class="service-description">
             <h3>Бьюти съемка</h3>
             <p>Краткое описание бьюти съемки. Профессиональные фотосессии для журналов и социальных сетей.</p>
-            <a href="ссылка_на_бьюти_съемку" class="btn2">Смотреть</a>
+            <a href="{% url 'services:shooting_type' 'byuti-semka' %}" class="btn2">Смотреть</a>
         </div>
     </div>
 
     <div class="service-item">
-        <a href="ссылка_на_студийную_фотографию">
+        <a href="{% url 'services:shooting_type' 'studijnaya-fotografiya' %}">
             <img src="{% static 'deps/images/services/stud.jpg' %}" class="service-image">
         </a>
         <div class="service-description">
             <h3>Студийная фотография</h3>
             <p>Краткое описание студийной фотографии. Лучшие условия и оборудование для качественной съемки.</p>
-            <a href="ссылка_на_студийную_фотографию" class="btn2">Смотреть</a>
+            <a href="{% url 'services:shooting_type' 'studijnaya-fotografiya' %}" class="btn2">Смотреть</a>
         </div>
     </div>
 </section>

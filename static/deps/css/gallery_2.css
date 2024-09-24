@@ -28,25 +28,25 @@
     position: relative;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .gallery-item img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 0px;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Эффект увеличения при наведении */
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Увеличенная тень */
+
 }
 
 /* Эффект при наведении на изображение */
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
     filter: brightness(65%); /* Затемнение изображения */
 }
 
@@ -86,7 +86,7 @@
 .show-more {
     margin-top: -70px; /* Отступ сверху */
     padding: 10px 30px; /* Отступ внутри кнопки */
-    font-size: 20px; /* Размер текста */
+    font-size: 20   px; /* Размер текста */
     color: #000000; /* Цвет текста */
     background-color: transparent; /* Прозрачный фон */
     border: 1px solid #000000; /* черная рамка */
@@ -105,4 +105,12 @@
 .show-more:hover {
     background-color: rgba(192, 192, 192, 0.2); /* Полупрозрачный белый фон при наведении */
     transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+.photoshoot-title {
+    text-align: center; /* Центрирует текст */
+    font-size: 20px; /* Размер шрифта для названия фотосессии */
+    margin: 15px 0 5px; /* Отступы сверху и снизу */
+    color: #333; /* Цвет текста */
+    font-family: 'Open Sans', sans-serif; /* Шрифт Open Sans */
 }

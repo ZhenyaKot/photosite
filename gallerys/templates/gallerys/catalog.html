@@ -33,7 +33,7 @@
                 <li><a href="{% url 'main:index' %}">Главная</a></li>
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
-                <li><a href="#services">Услуги</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li><a href="#prices">Цены</a></li>
             </ul>
@@ -43,32 +43,22 @@
 
 
 <section id="gallery" class="gallery-container">  <!-- Добавляем класс для центровки -->
-    <h2>Галерея работ</h2>
-    <div class="gallery-grid">
-        <a href="URL_для_работы_1" class="gallery-item">
-            <img src="{% static 'deps/images/list_photo/photo_4.jpg' %}" alt="Работа 1">
-            <div class="overlay">
-                <span>Смотреть работы</span>
-            </div>
-            <p class="shoot-date">Дата съемки: 01.01.2023</p>
-        </a>
-        <a href="URL_для_работы_2" class="gallery-item">
-            <img src="{% static 'deps/images/list_photo/photo_2.jpg' %}" alt="Работа 2">
-            <div class="overlay">
-                <span>Смотреть работы</span>
-            </div>
-            <p class="shoot-date">Дата съемки: 02.01.2023</p>
-        </a>
-        <a href="URL_для_работы_3" class="gallery-item">
-            <img src="{% static 'deps/images/list_photo/photo_3.jpg' %}" alt="Работа 3">
-            <div class="overlay">
-                <span>Смотреть работы</span>
-            </div>
-            <p class="shoot-date">Дата съемки: 03.01.2023</p>
-        </a>
-        <!-- Добавляйте дополнительные работы аналогично -->
-    </div>
+    <h2>{{ first_photos.0.photoshoot.category.name }}</h2>
 
+    <div class="gallery-grid">
+        {% for photo in first_photos %}
+        <a href="{% url 'gallerys:photo' photo.photoshoot.slug %}" class="gallery-item">
+            <img src="{{ photo.image.url }}" alt="{{ forloop.counter }}">
+            <div class="overlay">
+                <span>Смотреть работы</span>
+            </div>
+            <h3 class="photoshoot-title">{{ photo.photoshoot.name }}</h3> <!-- Добавлено название фотосессии -->
+            <p class="shoot-date">{{ photo.photoshoot.shooting_date }}</p>
+        </a>
+        {% empty %}
+            <p>Нет фотографий для отображения</p>
+        {% endfor %}
+    </div>
 </section>
 
 <a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>

@@ -1,0 +1,101 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'deps/css/services.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/uslug.css' %}"> <!-- Подключение стилевого файла -->
+
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+<section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/services_main.jpg' %}');">>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Я предоставляю несколько категорий съемок и услуг </h1>
+    </div>
+</section>
+
+
+<!-- Навигационное меню как отдельный элемент -->
+    <header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#prices">Цены</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <!-- Услуги, предлагаемые фотографом -->
+    <section id="services">
+    <h2>Услуги</h2>
+
+    <div class="service-item">
+        <a href="{% url 'services:shooting_type' 'portretnaya-semka' %}">
+            <img src="{% static 'deps/images/services/portrait.jpg' %}" class="service-image">
+        </a>
+        <div class="service-description">
+            <h3>Портретная съемка</h3>
+            <p>Краткое описание портретной съемки. Мы предлагаем профессиональные услуги по созданию портретов в различных стилях.</p>
+            <a href="{% url 'services:shooting_type' 'portretnaya-semka' %}" class="btn2">Смотреть</a>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <a href="{% url 'services:shooting_type' 'feshn-semka' %}">
+            <img src="{% static 'deps/images/services/fashion.jpg' %}" class="service-image">
+        </a>
+        <div class="service-description">
+            <h3>Фешн съемка</h3>
+            <p>Краткое описание фешн съемки. Стильные фотографии, которые помогут выделить вашу индивидуальность.</p>
+            <a href="{% url 'services:shooting_type' 'feshn-semka' %}" class="btn2">Смотреть</a>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <a href="{% url 'services:shooting_type' 'byuti-semka' %}">
+            <img src="{% static 'deps/images/services/beauty.jpg' %}" class="service-image">
+        </a>
+        <div class="service-description">
+            <h3>Бьюти съемка</h3>
+            <p>Краткое описание бьюти съемки. Профессиональные фотосессии для журналов и социальных сетей.</p>
+            <a href="{% url 'services:shooting_type' 'byuti-semka' %}" class="btn2">Смотреть</a>
+        </div>
+    </div>
+
+    <div class="service-item">
+        <a href="{% url 'services:shooting_type' 'studijnaya-fotografiya' %}">
+            <img src="{% static 'deps/images/services/stud.jpg' %}" class="service-image">
+        </a>
+        <div class="service-description">
+            <h3>Студийная фотография</h3>
+            <p>Краткое описание студийной фотографии. Лучшие условия и оборудование для качественной съемки.</p>
+            <a href="{% url 'services:shooting_type' 'studijnaya-fotografiya' %}" class="btn2">Смотреть</a>
+        </div>
+    </div>
+</section>
+
+ <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+</body>

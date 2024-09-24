@@ -4,7 +4,7 @@ from gallerys import views
 app_name = 'gallerys'
 
 urlpatterns = [
-    path('catalog/', views.catalog, name='catalog'),
-    path('photo/<int:photoshoot_id>/', views.photo, name='photo'),
+    path('catalog/<slug:category_slug>/', views.catalog, name='catalog'),
+    path('photo/<slug:photoshoot_slug>/', views.photo, name='photo'),
     path('genre/', views.genre, name='genre'),
 ]

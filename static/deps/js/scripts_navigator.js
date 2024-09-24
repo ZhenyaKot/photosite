@@ -70,49 +70,50 @@ scrollToTopBtn.addEventListener("click", function(event) {
 
 
 
-let currentIndex = {
-    portraits: 0,
-    fashion: 0,
-    beauty: 0,
-    studio: 0,
-};
-
-function getContainerWidth(galleryId) {
-    const imagesContainer = document.getElementById(galleryId);
-    return imagesContainer.clientWidth; // Получаем ширину контейнера
-}
+let currentIndex = 0; // Текущий индекс видимой группы
 
 function moveLeft(galleryId) {
-    if (currentIndex[galleryId] > 0) {
-        currentIndex[galleryId]--;
-        updateGalleryPosition(galleryId);
+    const gallery = document.getElementById(galleryId);
+    const items = gallery.getElementsByClassName('gallery-item');
+    const totalImages = items.length;
+
+    // Фиксируем, сколько изображений показываем
+    const imagesToShow = 3;
+
+    // Проверяем, что можем сдвинуться влево
+    if (currentIndex > 0) {
+        currentIndex--; // Уменьшаем индекс группы
+        updateGallery(gallery, items, currentIndex, imagesToShow);
     }
 }
 
 function moveRight(galleryId) {
-    const imagesContainer = document.getElementById(galleryId);
-    const imagesCount = imagesContainer.children.length;
+    const gallery = document.getElementById(galleryId);
+    const items = gallery.getElementsByClassName('gallery-item');
+    const totalImages = items.length;
 
-    if (currentIndex[galleryId] < imagesCount - 1) {
-        currentIndex[galleryId]++;
-        updateGalleryPosition(galleryId);
+    // Фиксируем, сколько изображений показываем
+    const imagesToShow = 3;
+
+    // Проверяем, что можем сдвинуться вправо
+    if (currentIndex < totalImages - imagesToShow) {
+        currentIndex++; // Увеличиваем индекс группы
+        updateGallery(gallery, items, currentIndex, imagesToShow);
     }
 }
 
-function updateGalleryPosition(galleryId) {
-    const imagesContainer = document.getElementById(galleryId);
-    const itemWidth = 415; // Ширина одного изображения + отступы
-    const offset = currentIndex[galleryId] * itemWidth; // Вычисляем необходимый сдвиг
-    imagesContainer.style.transform = `translateX(-${offset}px)`;
+function updateGallery(gallery, items, currentIndex, imagesToShow) {
+    const itemWidth = items[0].offsetWidth; // Ширина одного изображения
+
+    // Вычисляем новое смещение, учитывая, что показываем три изображения
+    const newOffset = -(currentIndex * itemWidth); // Смещение на ширину одного изображения
+    gallery.style.transform = `translateX(${newOffset}px)`; // Применяем смещение
 }
 
-// Вызывайте эту функцию при загрузке страницы, чтобы установить первоначальное состояние
-window.onload = () => {
-    const galleries = ['portraits', 'fashion', 'beauty', 'studio'];
-    galleries.forEach(galleryId => {
-        updateGalleryPosition(galleryId);
-    });
-};
+// Инициализация - показываем 3 изображения
+document.querySelectorAll('.gallery-images').forEach((gallery) => {
+    gallery.style.transform = 'translateX(0)';
+});
 
 
 

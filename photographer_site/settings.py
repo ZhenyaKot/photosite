@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
     'main',
     'gallerys',
+    'services',
 ]
 
 MIDDLEWARE = [
