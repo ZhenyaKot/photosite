@@ -31,11 +31,10 @@
         <nav>
             <ul class="navigation-menu">
                 <li><a href="{% url 'main:index' %}">Главная</a></li>
-                <li><a href="#about">Обо мне</a></li>
+                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
                 <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
                 <li><a href="{% url 'services:index' %}">Услуги</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#prices">Цены</a></li>
+                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
             </ul>
         </nav>
     </header>
@@ -77,7 +76,7 @@
         </div>
 
         <div class="button-container">
-            <a href="/gallery/">
+            <a href="{% url 'contacts:contact' %}">
             <button class="btn-book">Забронировать</button>
             </a>
         </div>

@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mari Mazi</title>
+
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+    {% block css %}
+
+    {% endblock %}
+    <link rel="icon" type="image/jpg" sizes="16x16" href="{% static 'deps/icons/title.jpg' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+{% block before %}
+
+{% endblock %}
+
+<header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
+                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
+                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
+                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
+            </ul>
+        </nav>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<!-- Футер с контактной информацией и ссылками на социальные сети -->
+    <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+</body>
+</html>

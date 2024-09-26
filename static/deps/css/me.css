@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex; /* Использование flexbox для расположения элементов в строчку */
+    justify-content: flex-start; /* Выравнивание содержимого по левому краю */
+    align-items: center; /* Центрирование по вертикали */
+    padding: 30px; /* Уберите внутренние отступы, чтобы контейнер не выделялся */
+}
+
+.profile {
+    margin-right: 20px; /* Отступ справа от блока с фото для текста */
+}
+
+.profile-photo {
+    width: 400px; /* Увеличиваем ширину фото */
+    height: auto; /* Сохраняем пропорции изображения */
+    box-shadow: none; /* Убираем тень, если она не нужна */
+}
+
+.about {
+    flex: 1; /* Текст занимает оставшееся пространство */
+    background-color: transparent; /* Прозрачный фон блока с текстом */
+    padding: 20px; /* Внутренний отступ текста */
+}
+
+.about h1 {
+    margin-top: 0;
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+}
+
+.about h2 {
+    margin-top: 20px;
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+}
+
+
+.about p {
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+
+}
+.about ul {
+    list-style-type: none; /* Убираем маркеры */
+    padding-left: 0;
+}
+
+.about ul li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-family: 'Playfair Display SC', serif; /* Применяем шрифт Playfair Display SC */
+}
+
+.hero {
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фон фиксирован */
+    background-size: cover; /* Фон масштабируется, чтобы покрыть весь элемент */
+    background-position: center center; /* Центрирование фона */
+    height: 500px; /* Занимает высоту 100% видимой области браузера */
+    width: 100%; /* Занимает всю ширину */
+    position: relative; /* Позволяет использовать абсолютное позиционирование внутри */
+    overflow: hidden; /* Скрывает любые элементы, выходящие за пределы */
+}
+
+.hero-overlay {
+    position: absolute; /* Позволяет наложить оверлей на изображение */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный оверлей */
+    z-index: 1; /* Обеспечивает, что оверлей будет поверх фона */
+
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-80%); /* Сдвигаем на половину высоты для точного центрирования */
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif; /* Шрифт для заголовка h1 */
+    font-size: 4rem; /* Увеличиваем размер шрифта, настройте по желанию */
+    text-transform: uppercase; /* Преобразует текст в заглавные буквы */
+    letter-spacing: 0.05em; /* Устанавливаем небольшое расстояние между буквами, настройте значение по желанию */
+    margin: 0; /* Убираем стандартные отступы */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Добавляем тень к тексту */
+}

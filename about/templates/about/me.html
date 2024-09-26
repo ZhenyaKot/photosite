@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title>
+
+    <link rel="stylesheet" href="{% static 'deps/css/me.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+
+<section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/about.jpg' %}');">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>Давайте знакомиться</h1>
+    </div>
+</section>
+
+
+<header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
+                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
+                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
+                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
+            </ul>
+        </nav>
+</header>
+
+
+
+    <div class="container">
+        <div class="profile">
+            <img src="{% static 'deps/images/about_photo3.jpg' %}" alt="Моя фотография" class="profile-photo">
+        </div>
+        <div class="about">
+            <h1>Обо мне</h1>
+            <p>
+                Привет! Меня зовут Мария, и я профессиональный фотограф. Фотография — это моя страсть, и я занимаюсь этим уже более пяти лет. Моя работа — это не просто способ зарабатывать на жизнь; это способ выражать свои чувства, делиться моментами и запечатлевать красоту в каждом кадре.
+            </p>
+            <p>
+                Я начала свой путь в мире фотографии, когда мне было всего 16 лет. С тех пор я открыла для себя множество ее аспектов: от портретной и свадебной фотографии до съемки природы и городских пейзажей. Каждый новый проект для меня — это возможность рассказать историю и создать что-то уникальное.
+            </p>
+            <p>
+                Я верю, что каждая фотография должна вызывать эмоции, и я стремлюсь передать это через свои снимки. Моя задача — запечатлеть не только внешний вид людей, но и их внутренние миры: радость, грусть, любовь и дружбу. Я знаю, насколько важны эти моменты в жизни каждого человека.
+            </p>
+            <h2>Интересные факты</h2>
+            <ul>
+                <li>Я владею несколькими языками, включая русский, английский и испанский.</li>
+                <li>Мое любимое хобби — путешествовать и открывать новые места, чтобы вдохновляться на новые фотосессии.</li>
+                <li>Я мечтаю о том, чтобы однажды провести выставку своих работ в знаменитой галерее.</li>
+                <li>В свободное время я занимаюсь рисованием и люблю читать книги по искусству и фотографии.</li>
+            </ul>
+        </div>
+    </div>
+
+ <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+</body>
+</html>

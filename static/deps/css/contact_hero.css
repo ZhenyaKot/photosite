@@ -1,0 +1,44 @@
+body {
+    margin: 0; /* Убирает внешние отступы у body */
+    padding: 0; /* Устанавливает внутренние отступы у body */
+}
+
+.hero {
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фон фиксирован */
+    background-size: cover; /* Фон масштабируется, чтобы покрыть весь элемент */
+    background-position: center center; /* Центрирование фона */
+    height: 500px; /* Занимает высоту 100% видимой области браузера */
+    width: 100%; /* Занимает всю ширину */
+    position: relative; /* Позволяет использовать абсолютное позиционирование внутри */
+    overflow: hidden; /* Скрывает любые элементы, выходящие за пределы */
+}
+
+.hero-overlay {
+    position: absolute; /* Позволяет наложить оверлей на изображение */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный оверлей */
+    z-index: 1; /* Обеспечивает, что оверлей будет поверх фона */
+
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    top: 50%; /* Центрируем по вертикали */
+    transform: translateY(-80%); /* Сдвигаем на половину высоты для точного центрирования */
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif; /* Шрифт для заголовка h1 */
+    font-size: 2rem; /* Увеличиваем размер шрифта, настройте по желанию */
+    text-transform: uppercase; /* Преобразует текст в заглавные буквы */
+    letter-spacing: 0.05em; /* Устанавливаем небольшое расстояние между буквами, настройте значение по желанию */
+    margin: 0; /* Убираем стандартные отступы */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Добавляем тень к тексту */
+}

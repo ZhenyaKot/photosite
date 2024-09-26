@@ -115,6 +115,20 @@ document.querySelectorAll('.gallery-images').forEach((gallery) => {
     gallery.style.transform = 'translateX(0)';
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const notification = document.getElementById('notification');
+    if (notification) {
+        setTimeout(() => {
+            notification.style.transition = 'opacity 0.5s'; // Анимация
+            notification.style.opacity = '0'; // Установка прозрачности
+
+            // Слушаем событие завершения перехода
+            notification.addEventListener('transitionend', () => {
+                notification.remove(); // Удаляем элемент из DOM
+            });
+        }, 10000); // Скрыть через 10 секунд
+    }
+});
 
 
 

@@ -1,0 +1,129 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
+     <link rel="stylesheet" href="{% static 'deps/css/contact.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+    <link rel="stylesheet" href="{% static 'deps/css/contact_hero.css' %}"> <!-- Подключение стилевого файла -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                        <div id="notification" class="alert alert-success fade show custom-shadow" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+<section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/portfolio_main.jpg' %}');">>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>свяжитесь со мной удобным для вас способом</h1>
+        <h1>или оставьте заявку на съемку</h1>
+    </div>
+</section>
+
+
+<header class="header-nav">  <!-- Новый класс для навигации -->
+        <nav>
+            <ul class="navigation-menu">
+                <li><a href="{% url 'main:index' %}">Главная</a></li>
+                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
+                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
+                <li><a href="{% url 'services:index' %}">Услуги</a></li>
+                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+<!-- Секция "Контакты" -->
+<section id="contacts">
+    <h2>Контакты</h2>
+    <div class="contact-container">
+        <!-- Левая сторона: форма для заполнения -->
+        <div class="contact-form">
+            <p class="form-intro">Оставьте заявку на съемку, и я свяжусь с вами</p>
+            <form action="{% url 'contacts:contact' %}" method="POST">
+                {% csrf_token %}
+                <label for="id_name">Имя:</label>
+                <input type="text" id="id_name"
+                       value="{% if form.name.value %} {{form.name.value}}{% endif %}"
+                       name="name"
+                       placeholder="Введите ваше имя" required>
+                {% if form.name.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">{{form.name.errors}}</div>
+                {% endif %}
+                <label for="id_email">Email:</label>
+                <input type="email" id="id_email"
+                       value="{% if form.email.value %} {{form.email.value}}{% endif %}"
+                       name="email"
+                       placeholder="Введите ваш email" required>
+                {% if form.name.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">{{form.email.errors}}</div>
+                {% endif %}
+                <label for="id_phone">Номер телефона:</label>
+                <input type="tel" id="id_phone"
+                       value="{% if form.phone.value %} {{form.phone.value}}{% endif %}"
+                       name="phone"
+                       placeholder="Введите ваш номер телефона" required>
+                {% if form.phone.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">{{form.phone.errors}}</div>
+                {% endif %}
+
+                <button type="submit" class="submit-button">Отправить</button>
+                <p class="privacy-notice">Нажимая кнопку "Отправить", вы соглашаетесь с политикой конфиденциальности.</p>
+            </form>
+        </div>
+
+        <!-- Правая сторона: информация и кнопки -->
+        <div class="contact-info">
+            <h3>Связаться со мной</h3>
+            <p>Email: <a href="mailto:mary.mazy@mail.com" class="email-link">mary.mazy@mail.com</a></p>
+            <p>Телефон: <span class="phone-number">+7 (988) 954-68-74</span></p>
+            <div class="social-buttons">
+                <a href="https://t.me/Zhenya1Kot" class="social-button telegram">Написать мне в Телеграмм</a>
+                <a href="https://wa.me/+79628531872" class="social-button whatsapp">Написать мне в Ватсапп</a>
+                <a href="https://vk.com/kotssccc" class="social-button vk">Написать мне в ВКонтакте</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <!-- Футер с контактной информацией и ссылками на социальные сети -->
+    <footer>
+        <div class="social-media">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://facebook.com">Facebook</a>
+        </div>
+        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
+        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
+    </footer>
+
+<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
+
+<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
+</body>
+</html>

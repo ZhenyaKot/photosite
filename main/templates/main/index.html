@@ -1,3 +1,5 @@
+
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -5,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотограф Meri Mazi</title>
+     <title>{{ content_2 }}</title>
     <link rel="stylesheet" href="{% static 'deps/css/styles.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/about_me.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/gallery.css' %}"> <!-- Подключение стилевого файла -->
@@ -14,15 +16,35 @@
     <link rel="stylesheet" href="{% static 'deps/css/services.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/contact.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
 
+    <link rel="icon" type="image/jpg" sizes="16x16" href="{% static 'deps/icons/title.jpg' %}">
 
 </head>
 <body>
+
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'success' %}
+                        <div id="notification" class="alert alert-success fade show custom-shadow" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
     <!-- Заголовок сайта -->
     <div class="logo">
         <h1>
@@ -36,11 +58,10 @@
         <nav>
             <ul class="navigation-menu">
                 <li><a href="#home">Главная</a></li>
-                <li><a href="#about">Обо мне</a></li>
+                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
                 <li><a href="#gallery">Галерея</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#prices">Цены</a></li>
             </ul>
         </nav>
     </header>
@@ -163,15 +184,34 @@
         <!-- Левая сторона: форма для заполнения -->
         <div class="contact-form">
             <p class="form-intro">Оставьте заявку на съемку, и я свяжусь с вами</p>
-            <form action="submit_form.php" method="POST">
-                <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" required>
+            <form action="{% url 'main:index' %}" method="POST">
+                        {% csrf_token %}
+                <label for="id_name">Имя:</label>
+                <input type="text" id="id_name"
+                       value="{% if form.name.value %} {{form.name.value}}{% endif %}"
+                       name="name"
+                       placeholder="Введите ваше имя" required>
+                {% if form.name.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">{{form.name.errors}}</div>
+                {% endif %}
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="id_email">Email:</label>
+                <input type="email" id="id_email"
+                       value="{% if form.email.value %} {{form.email.value}}{% endif %}"
+                       name="email"
+                       placeholder="Введите ваш email" required>
+                {% if form.name.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">{{form.email.errors}}</div>
+                {% endif %}
 
-                <label for="phone">Номер телефона:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <label for="id_phone">Номер телефона:</label>
+                <input type="tel" id="id_phone"
+                       value="{% if form.phone.value %} {{form.phone.value}}{% endif %}"
+                       name="phone"
+                       placeholder="Введите ваш номер телефона" required>
+                {% if form.phone.errors %}
+                <div class="alert alert-danger alert-dismissible fade show">{{form.phone.errors}}</div>
+                {% endif %}
 
                 <button type="submit" class="submit-button">Отправить</button>
                 <p class="privacy-notice">Нажимая кнопку "Отправить", вы соглашаетесь с политикой конфиденциальности.</p>
@@ -184,9 +224,9 @@
             <p>Email: <a href="mailto:mary.mazy@mail.com" class="email-link">mary.mazy@mail.com</a></p>
             <p>Телефон: <span class="phone-number">+7 (988) 954-68-74</span></p>
             <div class="social-buttons">
-                <a href="https://t.me/yourusername" class="social-button telegram">Написать мне в Телеграмм</a>
-                <a href="https://wa.me/yourphonenumber" class="social-button whatsapp">Написать мне в Ватсапп</a>
-                <a href="https://vk.com/im?w=wall-123456&message=YourMessage" class="social-button vk">Написать мне в ВКонтакте</a>
+                <a href="https://t.me/Zhenya1Kot" class="social-button telegram">Написать мне в Телеграмм</a>
+                <a href="https://wa.me/+79628531872" class="social-button whatsapp">Написать мне в Ватсапп</a>
+                <a href="https://vk.com/kotssccc" class="social-button vk">Написать мне в ВКонтакте</a>
             </div>
         </div>
     </div>
@@ -205,6 +245,7 @@
 <a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
 
 <script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
+
 
 
 </body>
