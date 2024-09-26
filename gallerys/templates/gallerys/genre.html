@@ -1,52 +1,22 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-
+{% block css %}
     <link rel="stylesheet" href="{% static 'deps/css/genre.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
 
 
-
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фотограф Meri Mazi</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Подключение CSS файла -->
-</head>
-<body>
-
-
+{% block before %}
 <section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/portfolio_main.jpg' %}');">>
     <div class="hero-overlay"></div>
     <div class="hero-text">
         <h1>Портфолио</h1>
     </div>
 </section>
+{% endblock %}
 
 
-<!-- Навигационное меню как отдельный элемент -->
-    <header class="header-nav">  <!-- Новый класс для навигации -->
-        <nav>
-            <ul class="navigation-menu">
-                <li><a href="{% url 'main:index' %}">Главная</a></li>
-                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
-                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
-                <li><a href="{% url 'services:index' %}">Услуги</a></li>
-                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
+{% block content %}
     <div class="gallery-block">
     <h2 class="gallery-title">Портретная съемка</h2>
     <div class="gallery">
@@ -138,23 +108,4 @@
             <a href="{% url 'gallerys:catalog' 'studijnaya-fotografiya' %}">Смотреть галерею работ</a>
         </div>
     </div>
-
-
-
-   <footer>
-        <div class="social-media">
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://facebook.com">Facebook</a>
-        </div>
-        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
-        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
-    </footer>
-
-
-<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
-
-<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
-
-
-</body>
-</html>
+{% endblock %}

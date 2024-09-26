@@ -23,6 +23,7 @@ def index(request):
         'title': 'Фотограф Meri Mazi',
         'content_1': 'Фотограф',
         'content_2': 'Meri Mazi',
-        'form': form
+        'form': form,
+        'is_home': True,
     }
     return render(request, 'main/index.html', context)

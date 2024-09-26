@@ -1,45 +1,23 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+{% block css %}
     <link rel="stylesheet" href="{% static 'deps/css/category_services.css' %}"> <!-- Подключение стилевого файла -->
-     <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/uslug.css' %}"> <!-- Подключение стилевого файла -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-
-</head>
-<body>
+{% endblock %}
 
 
+{% block before %}
 <section id='home_catalog' class="hero" style="background-image: url('{% static 'deps/images/photoshoot_type.jpg' %}');">
     <div class="hero-overlay"></div>
     <div class="hero-text">
         <h1>Прайс и услуги </h1>
     </div>
 </section>
+{% endblock %}
 
 
-<header class="header-nav">  <!-- Новый класс для навигации -->
-        <nav>
-            <ul class="navigation-menu">
-                <li><a href="{% url 'main:index' %}">Главная</a></li>
-                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
-                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
-                <li><a href="{% url 'services:index' %}">Услуги</a></li>
-                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
+{% block content %}
 <section class="photography-service">
     <div class="container">
         <h1 class="centered-title">{{ category }}</h1>
@@ -99,19 +77,4 @@
 
     </div>
 </section>
-
-<footer>
-        <div class="social-media">
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://facebook.com">Facebook</a>
-        </div>
-        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
-        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
-    </footer>
-
-<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
-
-<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
-
-</body>
-</html>
+{% endblock %}

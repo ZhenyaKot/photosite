@@ -1,34 +1,17 @@
-
-
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>{{ content_2 }}</title>
+
+{% block css %}
     <link rel="stylesheet" href="{% static 'deps/css/styles.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/about_me.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/gallery.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/services.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/contact.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
 
 
-    <link rel="icon" type="image/jpg" sizes="16x16" href="{% static 'deps/icons/title.jpg' %}">
-
-</head>
-<body>
-
-
+{% block before %}
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -52,20 +35,11 @@
             <span class="highlight subtitle">{{content_2}}</span>
         </h1>
     </div>
+{% endblock %}
 
-    <!-- Навигационное меню как отдельный элемент -->
-    <header class="header-nav">  <!-- Новый класс для навигации -->
-        <nav>
-            <ul class="navigation-menu">
-                <li><a href="#home">Главная</a></li>
-                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
 
+
+{% block content %}
     <!-- Секция hero с основным изображением -->
     <section id='home' class="hero" style="background-image: url('{% static 'deps/images/main_photo.jpg' %}');">
     <div class="hero-overlay"></div>
@@ -231,22 +205,5 @@
         </div>
     </div>
 </section>
+{% endblock %}
 
-    <!-- Футер с контактной информацией и ссылками на социальные сети -->
-    <footer>
-        <div class="social-media">
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://facebook.com">Facebook</a>
-        </div>
-        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
-        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
-    </footer>
-
-<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
-
-<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
-
-
-
-</body>
-</html>

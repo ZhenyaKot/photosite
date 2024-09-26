@@ -27,11 +27,11 @@
 <header class="header-nav">  <!-- Новый класс для навигации -->
         <nav>
             <ul class="navigation-menu">
-                <li><a href="{% url 'main:index' %}">Главная</a></li>
+                <li><a href="{% if is_home %}#home {% else %}{% url 'main:index' %}{% endif %}">Главная</a></li>
                 <li><a href="{% url 'about:about' %}">Обо мне</a></li>
-                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
-                <li><a href="{% url 'services:index' %}">Услуги</a></li>
-                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
+                <li><a href="{% if is_home %}#gallery {% else %}{% url 'gallerys:genre' %}{% endif %}">Галерея</a></li>
+                <li><a href="{% if is_home %}#services {% else %}{% url 'services:index' %}{% endif %}">Услуги</a></li>
+                <li><a href="{% if is_home %}#contacts {% else %}{% url 'contacts:contact' %}{% endif %}">Контакты</a></li>
             </ul>
         </nav>
 </header>

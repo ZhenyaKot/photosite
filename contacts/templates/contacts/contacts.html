@@ -1,23 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'deps/css/footer.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/navigator.css' %}"> <!-- Подключение стилевого файла -->
-     <link rel="stylesheet" href="{% static 'deps/css/contact.css' %}"> <!-- Подключение стилевого файла -->
-    <link rel="stylesheet" href="{% static 'deps/css/scroll_top.css' %}"> <!-- Подключение стилевого файла -->
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'deps/css/contact.css' %}"> <!-- Подключение стилевого файла -->
     <link rel="stylesheet" href="{% static 'deps/css/contact_hero.css' %}"> <!-- Подключение стилевого файла -->
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+{% endblock %}
 
 
+
+{% block before %}
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -42,22 +34,10 @@
         <h1>или оставьте заявку на съемку</h1>
     </div>
 </section>
+{% endblock %}
 
 
-<header class="header-nav">  <!-- Новый класс для навигации -->
-        <nav>
-            <ul class="navigation-menu">
-                <li><a href="{% url 'main:index' %}">Главная</a></li>
-                <li><a href="{% url 'about:about' %}">Обо мне</a></li>
-                <li><a href="{% url 'gallerys:genre' %}">Галерея</a></li>
-                <li><a href="{% url 'services:index' %}">Услуги</a></li>
-                <li><a href="{% url 'contacts:contact' %}">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
-
+{% block content %}
 <!-- Секция "Контакты" -->
 <section id="contacts">
     <h2>Контакты</h2>
@@ -110,20 +90,4 @@
         </div>
     </div>
 </section>
-
-   <!-- Футер с контактной информацией и ссылками на социальные сети -->
-    <footer>
-        <div class="social-media">
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://facebook.com">Facebook</a>
-        </div>
-        <p>Контакты: mary.mazi@mail.com | +7 (988) 954-68-74</p>
-        <p>&copy; 2024 Фотограф Мария. Все права защищены.</p>
-    </footer>
-
-<a href="#" class="scroll-to-top" id="scrollToTopBtn">↑</a>
-
-<script src="{% static 'deps/js/scripts_navigator.js' %}"></script>
-
-</body>
-</html>
+{% endblock %}
